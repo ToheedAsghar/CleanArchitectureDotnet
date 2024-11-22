@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Core.Entities.Customer>
+
+<div class="container mt-4">
+    <h2>Customer List</h2>
+    <a asp-action="AddCustomer" class="btn btn-primary mb-3">Add New Customer</a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.Id</td>
+                    <td>@customer.Name</td>
+                    <td>@customer.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<a asp-action="Index" asp-controller="Customer" class="btn btn-outline-primary">Return to Customer Home</a>
